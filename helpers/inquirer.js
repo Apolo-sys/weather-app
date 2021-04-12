@@ -73,15 +73,15 @@ const readInput = async ( message ) => {
     return desc
 }
 
-const listTaskErase = async( tasks = [] ) => {
+const listSites = async( sites = [] ) => {
 
-    const choices = tasks.map( (task, index) => {
+    const choices = sites.map( (site, index) => {
 
         const idx = `${index + 1}.`.green;
 
         return {
-            value: task.id,
-            name: `${ idx } ${task.desc}`
+            value: site.id,
+            name: `${ idx } ${site.name}`
         }
     })
 
@@ -94,7 +94,7 @@ const listTaskErase = async( tasks = [] ) => {
         {
             type: 'list',
             name: 'id',
-            message: 'Borrar',
+            message: 'Seleccione un lugar:',
             choices
         }
     ]
@@ -163,7 +163,7 @@ module.exports = {
     inquirerMenu,
     pause,
     readInput,
-    listTaskErase,
+    listSites,
     confirm,
     showListChecklist
 }
